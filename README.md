@@ -1,303 +1,143 @@
-# AI Agent 对话平台
+<div align="center">
 
-一个以对话为核心交互界面的 AI Agent 平台。用户通过聊天与 Agent 交互，Agent 在后端调用各类 Skill 完成任务（视频生成、网页爬取、代码执行等）。管理员可在后台管理模型 API、Skill、MCP 服务器、用户额度等资源。
+# Sotion
+
+**AI Image & Video Commercialization | POD Automation | Python Developer**
+
+专注于 AI 图像处理与视频生成在 Print on Demand（POD）领域的商业化应用，面向欧美市场构建自动化内容生产工作流。
+
+[![Profile Views](https://komarev.com/ghpvc/?username=sotion-cell&style=for-the-badge&color=blueviolet)](https://github.com/sotion-cell)
+
+</div>
+
+---
+
+## About
+
+具有信息流广告素材制作与东南亚跨境电商视觉设计背景，现阶段转型至 AI 图像与视频的商业化方向，围绕 POD 产品线搭建 AI 驱动的自动化工具链。
+
+技术方面以 Python 为主要开发语言，结合多个 AI 模型 API 进行工具开发与流程自动化，持续学习全栈开发相关技能。
+
+---
+
+## 业务方向
+
+以下能力均已投入商业化运营：
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**AI 图像转绘**
+基于 AI 模型对产品图进行风格化转绘，支持多种视觉风格输出。
+
+</td>
+<td width="50%" valign="top">
+
+**多尺寸自动化变体**
+单一素材自动生成多规格尺寸，适配各 POD 平台的上传标准。
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**无缝图案生成**
+支持水平、垂直及四边无缝图案生成，适用于面料、壁纸等品类。
+
+</td>
+<td width="50%" valign="top">
+
+**多人合照与换装**
+AI 驱动的多人合成、宠物换装、人物换装，服务于定制类 POD 产品。
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**模特换背景与图像裂变**
+基于单一素材进行多场景裂变，实现营销素材的批量化生产。
+
+</td>
+<td width="50%" valign="top">
+
+**TikTok AI 短视频生成**
+面向欧美市场（🇺🇸🇬🇧🇩🇪🇫🇷）的 AI 短视频自动化生产流程。
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 技术栈
 
-| 层次 | 技术 |
-|---|---|
-| 后端 | Python + FastAPI + SQLAlchemy + Alembic |
-| 前端 | React + Vite + TypeScript + Ant Design |
-| 数据库 | PostgreSQL（主库）+ Redis（缓存/队列） |
-| 异步任务 | Celery（Skill 异步执行） |
-| AI | 多模型支持（OpenAI / Google Gemini / Imagen 3 / 字节豆包 / 任意 OpenAI 兼容代理） |
-| 容器 | Docker Compose（7 个服务） |
+<div align="center">
+
+**AI 图像与视频**
+
+![Stable Diffusion](https://img.shields.io/badge/Stable_Diffusion-A855F7?style=flat-square)
+![ComfyUI](https://img.shields.io/badge/ComfyUI-2D9CDB?style=flat-square)
+![Midjourney](https://img.shields.io/badge/Midjourney-000000?style=flat-square)
+![NanoBanana](https://img.shields.io/badge/NanoBanana-FFB800?style=flat-square)
+![Kling](https://img.shields.io/badge/Kling_AI-FF6B6B?style=flat-square)
+![Seedance](https://img.shields.io/badge/Seedance-00C853?style=flat-square)
+![Hailuo](https://img.shields.io/badge/Hailuo-2979FF?style=flat-square)
+
+**大模型与平台**
+
+![Claude](https://img.shields.io/badge/Claude-D4A574?style=flat-square&logo=anthropic&logoColor=white)
+![GPT](https://img.shields.io/badge/GPT-412991?style=flat-square&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
+![Coze](https://img.shields.io/badge/Coze-5B61F5?style=flat-square)
+![小米 MIMO](https://img.shields.io/badge/MIMO-FF6900?style=flat-square&logo=xiaomi&logoColor=white)
+
+**开发与工具**
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Photoshop](https://img.shields.io/badge/Photoshop-31A8FF?style=flat-square&logo=adobephotoshop&logoColor=white)
+![API Integration](https://img.shields.io/badge/API_Integration-009688?style=flat-square)
+![Web Scraping](https://img.shields.io/badge/Web_Scraping-43A047?style=flat-square)
+![Automation](https://img.shields.io/badge/Automation-FF7043?style=flat-square)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+
+</div>
 
 ---
 
-## 功能模块
+## 职业背景
 
-### 用户功能
-- **对话（主界面）**：与 Agent 聊天，发起 Skill 任务
-- **对话历史**：查看和管理历史会话
-- **资源库**：查看 Agent 生成的文件（图片、视频、代码等）
-- **任务状态**：查看异步 Skill 任务进度
-
-### 管理员功能
-- **用户管理**：增删改查用户、启用/禁用账号、重置密码
-- **模型管理**：配置各厂商 AI API（base_url、api_key、支持的模型名）
-- **Skill 管理**：注册/配置可供 Agent 调用的 Skill（含参数模板）
-- **MCP 管理**：连接和配置 MCP 服务器（Model Context Protocol）
-- **额度管理**：查看各用户 token 用量、设置配额上限
+| 阶段 | 方向 | 说明 |
+|------|------|------|
+| 早期 | 广告素材制作 | 信息流广告素材的批量生产与投放支持 |
+| 中期 | 电商视觉设计 | 东南亚电商平台（Shopee / Lazada）产品图与店铺视觉设计 |
+| 现阶段 | AI + POD 商业化 | AI 图像与视频处理工具链搭建，服务于 POD 产品的欧美市场投放 |
 
 ---
 
-## 数据模型
+## 当前重点
 
-### users（用户表）
-```sql
-id UUID PK
-username VARCHAR(50) UNIQUE NOT NULL
-email VARCHAR(100) UNIQUE NOT NULL
-password_hash VARCHAR(255) NOT NULL
-role VARCHAR(20) NOT NULL DEFAULT 'user'   -- 'admin' | 'user'
-is_active BOOLEAN NOT NULL DEFAULT true
-created_at TIMESTAMP NOT NULL
-updated_at TIMESTAMP NOT NULL
-```
+| 方向 | 具体内容 |
+|------|----------|
+| 产品研发 | POD 图像处理自动化流水线（转绘 / 无缝图 / 换装 / 图像裂变） |
+| 内容生产 | TikTok AI 短视频自动生成工具 |
+| 技术探索 | Seedance 2.0 / 小米 MIMO 等模型 API 接入与集成 |
+| 技能学习 | Python 全栈开发、云服务部署与自动化运维 |
 
-### conversations（对话表）
-```sql
-id UUID PK
-user_id UUID FK → users.id
-title VARCHAR(200)
-created_at TIMESTAMP NOT NULL
-updated_at TIMESTAMP NOT NULL
-```
 
-### messages（消息表）
-```sql
-id UUID PK
-conversation_id UUID FK → conversations.id
-role VARCHAR(20) NOT NULL   -- 'user' | 'assistant'
-content TEXT NOT NULL
-metadata JSONB DEFAULT '{}'
-created_at TIMESTAMP NOT NULL
-```
 
-### model_configs（模型配置表）
-```sql
-id UUID PK
-name VARCHAR(100) UNIQUE NOT NULL    -- 显示名称，如 "GPT-4o"
-provider VARCHAR(50) NOT NULL        -- openai / google / doubao / custom
-model_type VARCHAR(20) NOT NULL DEFAULT 'llm'  -- llm / image / video
-base_url VARCHAR(500)
-api_key_encrypted TEXT NOT NULL
-model_name VARCHAR(100) NOT NULL     -- 实际传给 API 的 model 参数
-is_active BOOLEAN NOT NULL DEFAULT true
-is_default BOOLEAN NOT NULL DEFAULT false
-created_at TIMESTAMP NOT NULL
-updated_at TIMESTAMP NOT NULL
-```
+<div align="center">
 
-### skills（Skill 定义表）
-```sql
-id UUID PK
-name VARCHAR(100) UNIQUE NOT NULL
-description TEXT
-handler VARCHAR(200) NOT NULL    -- Python 函数路径，如 "app.skills.video.generate"
-parameters JSONB DEFAULT '{}'    -- JSON Schema 描述参数
-is_active BOOLEAN NOT NULL DEFAULT true
-created_at TIMESTAMP NOT NULL
-updated_at TIMESTAMP NOT NULL
-```
+本账号主要用于技术学习与经验分享。
 
-### mcp_servers（MCP 服务器表）
-```sql
-id UUID PK
-name VARCHAR(100) UNIQUE NOT NULL
-endpoint VARCHAR(500) NOT NULL
-description TEXT
-is_active BOOLEAN NOT NULL DEFAULT true
-created_at TIMESTAMP NOT NULL
-updated_at TIMESTAMP NOT NULL
-```
+对 POD、AI 图像处理或自动化工作流感兴趣的朋友，欢迎交流探讨。
 
-### resources（资源表）
-```sql
-id UUID PK
-user_id UUID FK → users.id
-conversation_id UUID FK → conversations.id  -- 可为空
-name VARCHAR(200) NOT NULL
-type VARCHAR(50) NOT NULL     -- image / video / code / file
-url TEXT NOT NULL             -- 存储路径或外部 URL
-size_bytes BIGINT
-metadata JSONB DEFAULT '{}'
-created_at TIMESTAMP NOT NULL
-```
-
-### usage_logs（用量日志表）
-```sql
-id UUID PK
-user_id UUID FK → users.id
-model_config_id UUID FK → model_configs.id  -- 可为空
-tokens_input INT NOT NULL DEFAULT 0
-tokens_output INT NOT NULL DEFAULT 0
-created_at TIMESTAMP NOT NULL
-```
+</div>
 
 ---
 
-## API 路由
-
-所有接口前缀：`/api/v1`
-
-### 认证（auth）
-```
-POST /auth/login           用户登录 → JWT token
-POST /auth/register        用户注册
-GET  /auth/me              获取当前用户
-PUT  /auth/password        修改密码
-```
-
-### 聊天（chat）
-```
-POST   /chat/stream            SSE 流式对话（支持多模型、图片/视频/音频附件）
-```
-
-### 模型（models）
-```
-GET    /models/active          获取当前用户可用的已启用模型列表（不含 API Key）
-```
-
-### 对话（conversations）
-```
-GET    /conversations          对话列表（分页）
-POST   /conversations          新建对话
-GET    /conversations/{id}     对话详情（含消息）
-DELETE /conversations/{id}     删除对话
-PUT    /conversations/{id}     重命名对话
-```
-
-### 生成（generate）
-```
-POST   /generate/image         图片生成（支持 Google Imagen 3 / Gemini 多模态）
-```
-
-### 资源（resources）
-```
-GET    /resources              用户资源列表（分页）
-DELETE /resources/{id}         删除资源
-```
-
-### 任务（tasks）
-```
-GET    /tasks                  用户任务列表（分页）
-GET    /tasks/{id}             任务详情/进度
-```
-
-### 管理员（admin）
-```
-GET    /admin/users            用户列表
-POST   /admin/users            新建用户
-PUT    /admin/users/{id}       修改用户
-DELETE /admin/users/{id}       删除用户
-
-GET    /admin/models           模型配置列表
-POST   /admin/models           新建模型配置
-PUT    /admin/models/{id}      修改模型配置
-DELETE /admin/models/{id}      删除模型配置
-
-GET    /admin/skills           Skill 列表
-POST   /admin/skills           新建 Skill
-PUT    /admin/skills/{id}      修改 Skill
-DELETE /admin/skills/{id}      删除 Skill
-
-GET    /admin/mcp              MCP 服务器列表
-POST   /admin/mcp              添加 MCP 服务器
-PUT    /admin/mcp/{id}         修改 MCP 服务器
-DELETE /admin/mcp/{id}         删除 MCP 服务器
-
-GET    /admin/quota            用量统计（分页，可按用户过滤）
-```
-
----
-
-## 统一响应格式
-
-```json
-{
-  "code": 200,
-  "message": "success",
-  "data": {}
-}
-```
-
-分页数据：
-```json
-{
-  "code": 200,
-  "message": "success",
-  "data": {
-    "items": [],
-    "total": 100,
-    "page": 1,
-    "page_size": 20
-  }
-}
-```
-
----
-
-## 前端页面结构
-
-```
-/                   → 对话（主界面）
-/conversations      → 对话历史列表
-/resources          → 用户资源库
-/tasks              → 任务状态
-/admin/users        → 用户管理（仅管理员）
-/admin/models       → 模型管理（仅管理员）
-/admin/skills       → Skill 管理（仅管理员）
-/admin/mcp          → MCP 管理（仅管理员）
-/admin/quota        → 额度管理（仅管理员）
-/settings/profile   → 个人设置
-/login              → 登录
-```
-
----
-
-## 开发规范
-
-- **后端**：PEP 8，Pydantic schemas 严格类型，所有 endpoint 使用 `Depends(get_current_user)` 验证
-- **前端**：Ant Design 组件，Zustand 状态管理，axios interceptor 自动注入 Bearer token
-- **分支策略**：main 分支为稳定版本，feature/* 为开发分支
-- **API key 安全**：model_configs 的 api_key 在存库前加密，接口返回时脱敏（只显示最后 4 位）
-
----
-
-## Docker 运行
-
-```bash
-# 启动所有容器
-docker-compose up -d
-
-# 初始化数据库
-docker-compose exec backend alembic upgrade head
-
-# 创建管理员账号
-docker-compose exec backend python scripts/create_admin.py
-
-# 查看日志
-docker-compose logs -f backend
-```
-
-访问：
-- 前端：http://localhost:5173
-- API 文档：http://localhost:8000/api/v1/docs
-
----
-
-## 环境变量（.env）
-
-```env
-DATABASE_URL=postgresql://soiton:soiton2026db@postgres:5432/agent_platform
-REDIS_URL=redis://redis:6379/0
-SECRET_KEY=<随机32位字符串>
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=1440
-CELERY_BROKER_URL=redis://redis:6379/1
-CELERY_RESULT_BACKEND=redis://redis:6379/2
-CORS_ORIGINS=["http://localhost:5173","http://localhost:3000"]
-```
-
----
-
-## 文件修改指南
-
-- 添加新 API：在 `backend/app/api/` 下新建文件，在 `router.py` 注册
-- 添加新模型：在 `backend/app/models/` 下新建文件，在 `models/__init__.py` 导出，创建 alembic migration
-- 添加新前端页面：在 `frontend/src/pages/` 下新建文件，在 `router/index.tsx` 和 `Sidebar.tsx` 注册
-- 修改某功能时，只需阅读本 README 对应模块 + 相关文件，无需全览代码库
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
+</div>
